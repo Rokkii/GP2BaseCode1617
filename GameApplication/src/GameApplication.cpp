@@ -18,6 +18,12 @@ void GameApplication::parseConfig(int args,char * arg[])
 {
   stringstream ss;
   //parse config file
+  //init everything - SDL, if it is nonzero we have a problem
+  if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
+  {
+	  LOG(ERROR, "SDL can't be initialised %s", SDL_GetError());
+	  return false;
+  }
   XMLOptionsParser xmlParser=XMLOptionsParser("settings.xml");
   xmlParser.parse(m_Options);
   ss<<m_Options;
