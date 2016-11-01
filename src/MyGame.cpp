@@ -4,6 +4,7 @@ const std::string ASSET_PATH = "assets";
 const std::string SHADER_PATH = "/shaders";
 const std::string TEXTURE_PATH = "/textures";
 
+//Stufff
 MyGame::MyGame()
 {
 	m_TestObject = nullptr;
